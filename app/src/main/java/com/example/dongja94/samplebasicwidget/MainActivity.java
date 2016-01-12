@@ -1,5 +1,6 @@
 package com.example.dongja94.samplebasicwidget;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -56,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
 //                messageView.setText(""+count);
                 String message = getResources().getString(R.string.text_html);
                 messageView.setText(Html.fromHtml(message));
+            }
+        });
+
+        btn = (Button)findViewById(R.id.btn_resize);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ResizeActivity.class));
             }
         });
     }

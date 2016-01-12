@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,94 +11,154 @@
     tools:context="com.example.dongja94.samplebasicwidget.MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView2"
         android:gravity="center"
+        android:text="Hello World!"
         android:textIsSelectable="true" />
 
     <TextView
+        android:id="@+id/text_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_message"
-        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="@dimen/body_text_size"
-        android:textStyle="bold"
-        android:typeface="sans"
+        android:layout_below="@+id/textView2"
+        android:background="#00ff00"
         android:singleLine="false"
         android:textIsSelectable="true"
-        android:background="#00ff00" />
+        android:textSize="@dimen/body_text_size"
+        android:textStyle="bold"
+        android:typeface="sans" />
 
     <Button
+        android:id="@+id/btn_change"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/btn_change"
-        android:layout_below="@+id/text_message"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_message"
         android:background="@drawable/btn_selector"
+        android:text="New Button"
         android:textColor="@color/btn_font_color" />
 
     <Button
+        android:id="@+id/btn_two"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button 2"
-        android:id="@+id/btn_two"
-        android:layout_below="@+id/btn_change"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onButtonTwoClick" />
+        android:layout_below="@+id/btn_change"
+        android:onClick="onButtonTwoClick"
+        android:text="Button 2" />
 
     <CheckBox
+        android:id="@+id/check_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="alarm"
-        android:id="@+id/check_alarm"
-        android:layout_below="@+id/btn_two"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false"
+        android:layout_below="@+id/btn_two"
+        android:background="@drawable/check_box_selector"
         android:button="@null"
-        android:background="@drawable/check_box_selector"/>
+        android:checked="false"
+        android:text="alarm" />
 
     <RadioGroup
+        android:id="@+id/group_sex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/btn_change"
-        android:layout_toRightOf="@+id/btn_change"
         android:layout_toEndOf="@+id/btn_change"
-        android:orientation="vertical"
-        android:id="@+id/group_sex">
+        android:layout_toRightOf="@+id/btn_change"
+        android:orientation="vertical">
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="male"
             android:id="@+id/radio_m"
-            android:checked="true" />
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="female"
+            android:checked="true"
+            android:text="male" />
+
+        <RadioButton
             android:id="@+id/radio_f"
-            android:checked="false" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="female" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_radio_select"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/group_sex"
+        android:layout_alignStart="@+id/group_sex"
+        android:layout_below="@+id/group_sex"
+        android:onClick="onGroupSelect"
+        android:text="select" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/check_alarm"
+        android:checked="false"
+        android:text="New ToggleButton"
+        android:textOff="No"
+        android:textOn="Yes" />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleButton"
+        android:layout_toEndOf="@+id/text_message"
+        android:layout_toRightOf="@+id/text_message"
+        android:text="Switch"
+        android:textColor="#000000"
+        android:textOff="No"
+        android:textOn="Yes" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_below="@+id/view"
+        android:hint="your name..."
+        android:textColorHint="#00ff00">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:inputType="textPassword" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="select"
-        android:id="@+id/btn_radio_select"
-        android:layout_below="@+id/group_sex"
-        android:layout_alignLeft="@+id/group_sex"
-        android:layout_alignStart="@+id/group_sex"
-        android:onClick="onGroupSelect" />
+        android:text="resize activity"
+        android:id="@+id/btn_resize"
+        android:layout_above="@+id/view"
+        android:layout_toRightOf="@+id/view"
+        android:layout_toEndOf="@+id/view" />
 </RelativeLayout>
