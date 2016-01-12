@@ -42,4 +42,62 @@
         android:layout_alignParentStart="true"
         android:background="@drawable/btn_selector"
         android:textColor="@color/btn_font_color" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 2"
+        android:id="@+id/btn_two"
+        android:layout_below="@+id/btn_change"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onButtonTwoClick" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alarm"
+        android:id="@+id/check_alarm"
+        android:layout_below="@+id/btn_two"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:button="@null"
+        android:background="@drawable/check_box_selector"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_change"
+        android:layout_toRightOf="@+id/btn_change"
+        android:layout_toEndOf="@+id/btn_change"
+        android:orientation="vertical"
+        android:id="@+id/group_sex">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="male"
+            android:id="@+id/radio_m"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female"
+            android:id="@+id/radio_f"
+            android:checked="false" />
+    </RadioGroup>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="select"
+        android:id="@+id/btn_radio_select"
+        android:layout_below="@+id/group_sex"
+        android:layout_alignLeft="@+id/group_sex"
+        android:layout_alignStart="@+id/group_sex"
+        android:onClick="onGroupSelect" />
 </RelativeLayout>
