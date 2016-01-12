@@ -39,5 +39,7 @@
         android:id="@+id/btn_change"
         android:layout_below="@+id/text_message"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/btn_font_color" />
 </RelativeLayout>
