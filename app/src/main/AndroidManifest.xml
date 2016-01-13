@@ -10,12 +10,14 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan|stateVisible">
-        </activity>
+            android:windowSoftInputMode="adjustPan|stateVisible" />
         <activity
             android:name=".ResizeActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".ImageActivity">
+        <activity android:name=".ImageActivity"></activity>
+        <activity android:name=".ProgressActivity">
+        </activity>
+        <activity android:name=".DateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
